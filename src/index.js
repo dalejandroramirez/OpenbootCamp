@@ -1,5 +1,12 @@
+
 import React from 'react';
+import ReactDOM from 'react-dom'; 
+
+// npm i bootstrap --save para agregar bootstrap al proyecto
+import 'bootstrap/dist/css/bootstrap.css'
+// Importante : Los estilos propios son debajo de bootstrap
 import './index.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -14,7 +21,7 @@ root.render(
 
 //Esta version ya no es compatible con react 18
 
-// import ReactDOM from 'react-dom'; 
+//
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <App />

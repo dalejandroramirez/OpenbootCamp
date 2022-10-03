@@ -3,6 +3,8 @@ import { LEVELS } from '../../models/levels.enum';
 import { Task } from "../../models/task.class"
 import TaskComponent from '../pure/task';
 
+import '../../styles/task.scss'
+
 const TaskListComponent = () => {
   
   const defaultTask = new Task("Example" , "Default Description", false, LEVELS.NORMAL)
@@ -14,7 +16,7 @@ const TaskListComponent = () => {
   useEffect(() => {
     console.log("Tasks State has been modified");
     setLoading(false);
-    
+
     return () => {
       console.log('TaskList component is going to unmount');
     };
