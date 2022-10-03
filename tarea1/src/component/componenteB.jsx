@@ -3,12 +3,22 @@ import PropTypes from 'prop-types';
 
 
 function ComponenteB(estado) {
+    
     const [linked, setConectado] = useState(estado);
+    const [Estado, setEstado] = useState(linked.estado === true ? 'Contacto en Linea': 'Contacto no disponible');
+    const [EstadoBoton, setEstadoBoton] = useState(linked.estado === true ? 'Conectado': 'Desconectado');
+   
+    const Cambio = () => {
+        setConectado(!linked)
+        setEstado( linked === true ? 'Contacto no disponible': 'Contacto en Linea');
+        setEstadoBoton(linked === true ? 'Desconectado': 'Conectado')
+    }
 
     return (
         <div>
-          <h3> {linked === false ? 'Contacto no disponible' : 'Contacto en linea'}</h3>  
-          <button type="button" onClick={() => setConectado(!linked)}>{linked === false ? 'Conectado' : 'Desconectado'}</button>
+        
+          <h6> {Estado}</h6>  
+          <button type="button" onClick={Cambio}>{EstadoBoton}</button>
          
         </div>
     );

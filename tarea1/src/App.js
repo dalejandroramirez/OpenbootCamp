@@ -16,12 +16,7 @@ function App() {
                                     true  );
 
 
-  // const contactoPrueba3 ={
-  //   nombre: "adn",
-  //   apellido:"landa",
-  //   email: "ds",
-  //   linked:true
-  // }
+
   
 
   return (
@@ -30,7 +25,6 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
           <ComponenteA contact={contactoPrueba}/>
           <ComponenteA contact={contactoPrueba2}/>
-          {/* <ComponenteA contact={contactoPrueba3}/> */}
       </header>
     </div>
   );
