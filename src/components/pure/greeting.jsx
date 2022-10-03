@@ -34,8 +34,6 @@ class Greeting extends Component {
                     Cumplir Años
                   </button>
                 </div>
-
-                
             </div>
         );
     }
