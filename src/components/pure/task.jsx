@@ -15,7 +15,31 @@ const TaskComponent = ({task}) => {
 
 
     return (
-        <div>
+        <tr className='fw-normal'>
+            <th>
+                <span className='ms-2'>{task.name}</span> 
+            </th>
+            <td className='align-middle'>
+                <span>{task.description}</span> 
+            </td>
+            <td className='align-middle'>
+                <span>{task.level}</span> 
+                {/* Sustituir por un badge */}
+            </td>
+            <td className='align-middle'>
+                {/* Sustituir por iconos */}
+
+                <span>{task.completed ? 
+                    (<i className='bi-toggle-on' style={{color:"green"}}></i> )
+                    :
+                     (<i className='bi-toggle-off' style={{color:"red"}}></i>)}
+                </span> 
+            </td>
+  
+        </tr>
+
+    );
+        {/* <div>
             <h2 className='task-name'>
                 Nombre : { task.name }
             </h2>
@@ -28,8 +52,8 @@ const TaskComponent = ({task}) => {
             <h5>
                 This task is: { task.completed ? 'COMPLETED': 'PENDING' }
             </h5>
-        </div>
-    );
+        </div> */}
+    
 };
 
 

@@ -14,8 +14,8 @@ import Greetingstyled from './components/pure/greetingStyled';
 function App() {
   return (
     <div className={`${s.app}`}>  
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      {/* <header className="App-header"> */}
+
         {/* Componente de clase */}
         {/* <Greeting name="Alejo"></Greeting> */}
 
@@ -36,10 +36,9 @@ function App() {
           </h3>
         </Ejemplo4> */}
         
-        <Greetingstyled name = "Alejo" estado = {true}>
-        </Greetingstyled>
-
-      </header>
+        {/* <Greetingstyled name = "Alejo" estado = {true}></Greetingstyled> */}
+      <TaskListComponent ></TaskListComponent>
+      {/* </header> */}
     </div>
   );
 }
