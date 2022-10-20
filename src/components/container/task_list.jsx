@@ -33,10 +33,24 @@ const TaskListComponent = () => {
     // We update the state  of the componet with the new list of tasks  and it  will  update the
     //  iteration of the task in order to show  task update
     setTasks(tempTasks);
-
-
-
   }
+
+  function deleteTask(task) {
+    console.log("this task will be deleted",task);
+    const index = tasks.indexOf(task);
+    const tempTasks = [...tasks];
+    tempTasks.splice(index,1)
+    setTasks(tempTasks)
+  }
+
+function addTask(task) {
+  console.log("this task will be add",task);
+  const index = tasks.indexOf(task);
+  const tempTasks = [...tasks];
+  tempTasks.push(task)
+  setTasks(tempTasks)
+}
+
 
   return (
         <div>
@@ -61,7 +75,10 @@ const TaskListComponent = () => {
                         <TaskComponent 
                           key={index}
                           task={task}
-                          complete={completeTask}>
+                          complete={completeTask}
+                          remove={deleteTask}
+                          >
+                          
                         </TaskComponent>
                       )
                       })
@@ -69,12 +86,12 @@ const TaskListComponent = () => {
                   </tbody>
                 </table>
               </div>
-              <Taskform></Taskform>
             </div>
             
           </div>
           {/* aplicar todo varias veces */}
           {/* <TaskComponent task={defaultTask}></TaskComponent> */}
+              <Taskform add={addTask}></Taskform>
         </div>
     );
 };
