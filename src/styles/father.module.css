@@ -1,0 +1,10 @@
+.father{
+    background-color: tomato;
+    padding: 10px;
+    width: 100%;
+}
+
+.child{
+    background-color: gray;
+    justify-items: center;
+}

@@ -10,10 +10,11 @@ import Ejemplo2 from './components/hooks/Ejemplo2';
 import MiComponeteConContexto from './components/hooks/Ejemplo3'
 import Ejemplo4 from './components/hooks/Ejemplo4';
 import Greetingstyled from './components/pure/greetingStyled';
+import Father from './components/container/father';
 
 function App() {
   return (
-    <div className={`${s.app}`}>  
+    <div className={`${s.App}`}>  
       {/* <header className="App-header"> */}
 
         {/* Componente de clase */}
@@ -23,7 +24,7 @@ function App() {
         {/* <GreetingFun name="Alejo"></GreetingFun> */}
 
         {/* Componente Listado de Tareas */}
-        {/* <TaskListComponent ></TaskListComponent> */}
+        <TaskListComponent ></TaskListComponent>
         
         {/* Ejemplos de uso de Hooks */}
         {/* <Ejemplo1></Ejemplo1> */}
@@ -37,7 +38,10 @@ function App() {
         </Ejemplo4> */}
         
         {/* <Greetingstyled name = "Alejo" estado = {true}></Greetingstyled> */}
-      <TaskListComponent ></TaskListComponent>
+
+        {/*Gestion de eventos  */}
+      {/* <Father></Father> */}
+      {/* <TaskListComponent ></TaskListComponent> */}
       {/* </header> */}
     </div>
   );

@@ -4,12 +4,15 @@ import { Task } from "../../models/task.class"
 import TaskComponent from '../pure/task';
 
 import '../../styles/task.scss'
+import Taskform from '../pure/forms/taskForm';
 
 const TaskListComponent = () => {
   
-  const defaultTask = new Task("Example" , "Default Description", false, LEVELS.NORMAL)
+  const defaultTask = new Task("Example" , "Default Description", false, LEVELS.BLOCKING);
+  const defaultTask1 = new Task("Example1" , "Default Description1", true, LEVELS.NORMAL);
+  const defaultTask2 = new Task("Example2" , "Default Description1", true, LEVELS.URGENTE);
   
-  const [tasks, setTasks] = useState([defaultTask]);
+  const [tasks, setTasks] = useState([defaultTask,defaultTask1,defaultTask2]);
   const [loading, setLoading] = useState(true);
 
   // Control del ciclo de vida
@@ -22,16 +25,22 @@ const TaskListComponent = () => {
     };
   }, [tasks]);
   
+  function completeTask(task) {
+    console.log("Complete this task",task);
+    const index = tasks.indexOf(task);
+    const tempTasks = [...tasks];
+    tempTasks[index].completed = !tempTasks[index].completed ;
+    // We update the state  of the componet with the new list of tasks  and it  will  update the
+    //  iteration of the task in order to show  task update
+    setTasks(tempTasks);
 
-  
-  const changeCompleted = (id)=> {
-    console.log("Todo: Cambiar el estado de una tarea");
+
+
   }
 
   return (
         <div>
           <div className='col-12'>
-
             <div className='card'>
               <div className='card-header p-3' >
                 <h5>Your Tasks</h5>
@@ -40,19 +49,27 @@ const TaskListComponent = () => {
                 <table>
                   <thead>
                     <tr>
-                      <td scope = 'col'> Title</td>
-                      <td scope = 'col'> Description</td>
-                      <td scope = 'col'> Priority</td>
-                      <td scope = 'col'> Actions</td>
+                      <td > Title</td>
+                      <td > Description</td>
+                      <td> Priority</td>
+                      <td> Actions</td>
                     </tr>
                   </thead>
                   <tbody>
-                    {/* iterar sobre lista de tareas */}
-                    <TaskComponent task={defaultTask}></TaskComponent>
+                    { tasks.map((task,index) => {
+                      return (
+                        <TaskComponent 
+                          key={index}
+                          task={task}
+                          complete={completeTask}>
+                        </TaskComponent>
+                      )
+                      })
+                    }   
                   </tbody>
                 </table>
               </div>
-
+              <Taskform></Taskform>
             </div>
             
           </div>
