@@ -11,6 +11,8 @@ import MiComponeteConContexto from './components/hooks/Ejemplo3'
 import Ejemplo4 from './components/hooks/Ejemplo4';
 import Greetingstyled from './components/pure/greetingStyled';
 import Father from './components/container/father';
+import ContactListComponent from './components/container/contact_list';
+
 
 function App() {
   return (
@@ -24,7 +26,7 @@ function App() {
         {/* <GreetingFun name="Alejo"></GreetingFun> */}
 
         {/* Componente Listado de Tareas */}
-        <TaskListComponent ></TaskListComponent>
+        {/* <TaskListComponent ></TaskListComponent> */}
         
         {/* Ejemplos de uso de Hooks */}
         {/* <Ejemplo1></Ejemplo1> */}
@@ -43,6 +45,14 @@ function App() {
       {/* <Father></Father> */}
       {/* <TaskListComponent ></TaskListComponent> */}
       {/* </header> */}
+
+
+      {/* Tarea 3 */
+
+       <ContactListComponent>
+
+      </ContactListComponent> }
+      
     </div>
   );
 }

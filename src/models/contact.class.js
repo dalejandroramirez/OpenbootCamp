@@ -2,7 +2,7 @@ export class Contact {
   nombre = '' ;
   apellido = '' ;
   email = '' ;
-  linked = '' ;
+  linked = false ;
   constructor(nombre, apellido ,email,linked){
     this.nombre = nombre;
     this.apellido = apellido;

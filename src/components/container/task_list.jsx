@@ -3,6 +3,7 @@ import { LEVELS } from '../../models/levels.enum';
 import { Task } from "../../models/task.class"
 import TaskComponent from '../pure/task';
 
+
 import '../../styles/task.scss'
 import Taskform from '../pure/forms/taskForm';
 
@@ -17,11 +18,12 @@ const TaskListComponent = () => {
 
   // Control del ciclo de vida
   useEffect(() => {
-    console.log("Tasks State has been modified");
+    console.log("Tasks State has been modified",tasks);
     setLoading(false);
 
     return () => {
       console.log('TaskList component is going to unmount');
+
     };
   }, [tasks]);
   
@@ -78,7 +80,6 @@ function addTask(task) {
                           complete={completeTask}
                           remove={deleteTask}
                           >
-                          
                         </TaskComponent>
                       )
                       })
