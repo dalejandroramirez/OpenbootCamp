@@ -49,11 +49,13 @@ const TaskComponent = ({task,complete,remove}) => {
         
     }
 
+
+
     return (
-        <tr className='fw-normal'>
-            <th>
+        <tr className='fw-normal ' className={task.completed ? "task-completed":"task-pending"}>
+            <td>
                 <span className='ms-2'>{task.name}</span> 
-            </th>
+            </td>
             <td className='align-middle'>
                 <span>{task.description}</span> 
             </td>

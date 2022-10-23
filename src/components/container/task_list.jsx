@@ -19,7 +19,10 @@ const TaskListComponent = () => {
   // Control del ciclo de vida
   useEffect(() => {
     console.log("Tasks State has been modified",tasks);
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+    
 
     return () => {
       console.log('TaskList component is going to unmount');
@@ -47,22 +50,15 @@ const TaskListComponent = () => {
 
 function addTask(task) {
   console.log("this task will be add",task);
-  const index = tasks.indexOf(task);
   const tempTasks = [...tasks];
   tempTasks.push(task)
   setTasks(tempTasks)
 }
 
 
-  return (
-        <div>
-          <div className='col-12'>
-            <div className='card'>
-              <div className='card-header p-3' >
-                <h5>Your Tasks</h5>
-              </div>
-              <div className='card-body' data-mdb-perfect-scrollbar= "true" style = { {position: 'relative', height: '400px'} }>
-                <table>
+const Table = ()=> {
+  return(
+                    <table>
                   <thead>
                     <tr>
                       <td > Title</td>
@@ -86,13 +82,53 @@ function addTask(task) {
                     }   
                   </tbody>
                 </table>
+
+
+  )
+  
+}
+
+let taskTable = <Table></Table>
+
+if (tasks.length >0 ) {
+  taskTable = <Table></Table>
+}else{
+  taskTable = (
+  <div style={{textAlign:"center"}}
+  >
+  <h3> There are no task to show</h3>
+  <h5> Please, create one </h5>
+  </div>)
+}
+
+const loadingStyle = {
+  color: 'gray',
+  fontSize: '30px',
+  fontWeigth: 'bold'
+}
+
+
+
+
+  return (
+        <div>
+          <div className='col-12'>
+            <div className='card'>
+              <div className='card-header p-3' >
+                <h5>Your Tasks</h5>
+              </div>
+              <div className='card-body' data-mdb-perfect-scrollbar= "true" style = { {position: 'relative', height: '400px'} }>
+                {loading ? (<p style={loadingStyle }>Loading Tasks...</p>) : taskTable}
               </div>
             </div>
             
           </div>
           {/* aplicar todo varias veces */}
           {/* <TaskComponent task={defaultTask}></TaskComponent> */}
-              <Taskform add={addTask}></Taskform>
+              <Taskform 
+                add={addTask}
+                length={tasks.length}
+                ></Taskform>
         </div>
     );
 };

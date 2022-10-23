@@ -12,6 +12,7 @@ import Ejemplo4 from './components/hooks/Ejemplo4';
 import Greetingstyled from './components/pure/greetingStyled';
 import Father from './components/container/father';
 import ContactListComponent from './components/container/contact_list';
+import Optionalrender from './components/pure/optionalRender';
 
 
 function App() {
@@ -25,8 +26,7 @@ function App() {
         {/* Compente funcional */}
         {/* <GreetingFun name="Alejo"></GreetingFun> */}
 
-        {/* Componente Listado de Tareas */}
-        {/* <TaskListComponent ></TaskListComponent> */}
+
         
         {/* Ejemplos de uso de Hooks */}
         {/* <Ejemplo1></Ejemplo1> */}
@@ -47,11 +47,17 @@ function App() {
       {/* </header> */}
 
 
-      {/* Tarea 3 */
+      {/* {
 
        <ContactListComponent>
 
-      </ContactListComponent> }
+      </ContactListComponent> } */}
+
+      {/* Ejemplo Renderizado Condicional */}
+      {/* <Optionalrender></Optionalrender> */}
+
+      {/* Componente Listado de Tareas */}
+      <TaskListComponent ></TaskListComponent>
       
     </div>
   );

@@ -12,3 +12,15 @@ h1{
 .task-action {
     cursor: pointer;
 }
+
+
+
+.task-completed{
+    color: gray;
+    text-decoration: line-through;
+}
+
+.task-pending{
+    font-weight: bold;
+    color: red;
+}
