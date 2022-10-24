@@ -13,6 +13,7 @@ import Greetingstyled from './components/pure/greetingStyled';
 import Father from './components/container/father';
 import ContactListComponent from './components/container/contact_list';
 import Optionalrender from './components/pure/optionalRender';
+import Loginformik from './components/pure/forms/loginFormik';
 
 
 function App() {
@@ -49,6 +50,8 @@ function App() {
 
       {/* {
 
+      Formik
+
        <ContactListComponent>
 
       </ContactListComponent> } */}
@@ -56,8 +59,11 @@ function App() {
       {/* Ejemplo Renderizado Condicional */}
       {/* <Optionalrender></Optionalrender> */}
 
+      {/* Ejemplos uso de Formik y yup */}
+      <Loginformik></Loginformik>
+
       {/* Componente Listado de Tareas */}
-      <TaskListComponent ></TaskListComponent>
+      {/* <TaskListComponent ></TaskListComponent> */}
       
     </div>
   );
