@@ -6,6 +6,7 @@ import TaskComponent from '../pure/task';
 
 import '../../styles/task.scss'
 import Taskform from '../pure/forms/taskForm';
+import Taskformformink from '../pure/forms/taskFormFormink';
 
 const TaskListComponent = () => {
   
@@ -125,10 +126,16 @@ const loadingStyle = {
           </div>
           {/* aplicar todo varias veces */}
           {/* <TaskComponent task={defaultTask}></TaskComponent> */}
-              <Taskform 
+              {/* <Taskformformink
+                add={addTask}
+                length={tasks.length}
+                ></Taskformformink> */}
+                <Taskform
                 add={addTask}
                 length={tasks.length}
                 ></Taskform>
+            
+
         </div>
     );
 };

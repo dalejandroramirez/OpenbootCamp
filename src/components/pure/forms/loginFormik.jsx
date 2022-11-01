@@ -10,8 +10,9 @@ const loginSchema = Yup.object().shape(
               .required('this email is required'),
 
     password : Yup.string()
+                  .min(2, 'Too Short!')
+                  .max(12, 'Too Long!')
                   .required('Password is required')
-
   }
 );
 
@@ -55,14 +56,9 @@ const Loginformik = () => {
           <Form>
             <label htmlFor="email">Email:</label>
             <Field id="email" type="email" name="email" placeholder="example@email.com" />
-
-
             {/* Email Errors */}
             { 
-              errors.email && touched.email && 
-              ( 
                 <ErrorMessage name='email' component="div"/>
-              )
             }
 
             <label htmlFor="password">password:</label>

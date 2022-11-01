@@ -14,6 +14,8 @@ import Father from './components/container/father';
 import ContactListComponent from './components/container/contact_list';
 import Optionalrender from './components/pure/optionalRender';
 import Loginformik from './components/pure/forms/loginFormik';
+import Registerformik from './components/pure/forms/registerFormik';
+import Taskformformink from './components/pure/forms/taskFormFormink';
 
 
 function App() {
@@ -60,10 +62,14 @@ function App() {
       {/* <Optionalrender></Optionalrender> */}
 
       {/* Ejemplos uso de Formik y yup */}
-      <Loginformik></Loginformik>
+      {/* <Loginformik></Loginformik> */}
+      {/* <Registerformik></Registerformik> */}
+      
+      
 
       {/* Componente Listado de Tareas */}
-      {/* <TaskListComponent ></TaskListComponent> */}
+      <TaskListComponent ></TaskListComponent>
+      
       
     </div>
   );
