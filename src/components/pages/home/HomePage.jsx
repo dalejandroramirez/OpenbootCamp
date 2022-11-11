@@ -11,6 +11,20 @@ const Homepage = () => {
     navigate(path)
   }
 
+  const navigateProps = (path) => {
+
+    navigate
+    (
+      {
+      pathname : path,
+      search : '?online=true'
+      },
+      {state : {online:true}}
+    )
+
+  
+  };
+
 
   return (
     <div>
@@ -21,6 +35,9 @@ const Homepage = () => {
       <div>
         <button onClick={()=> {navegar('/profile')}}>
           Go Profile
+        </button>
+        <button onClick={()=> {navigateProps('/online-state')}}>
+          Go to page State /query params
         </button>
       </div>
   </div>
