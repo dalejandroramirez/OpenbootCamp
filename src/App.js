@@ -18,6 +18,7 @@ import Registerformik from './components/pure/forms/registerFormik';
 import Taskformformink from './components/pure/forms/taskFormFormink';
 import AsyncExample from './components/pure/AsyncExample';
 import Observableexample from './components/pure/forms/ObservableExample';
+import Fetchexample from './components/pure/FetchExample';
 
 
 
@@ -72,7 +73,8 @@ function App() {
       
       {/* Ejemplo de procesos Asincronos */}
       {/* <AsyncExample/> */}
-      <Observableexample/>
+      {/* <Observableexample/> */}
+      <Fetchexample/>
 
       {/* Componente Listado de Tareas */}
       {/* <TaskListComponent ></TaskListComponent>
