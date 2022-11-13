@@ -5,15 +5,27 @@ import Notfoundpage from './components/pages/404/NotFoundPage';
 import Loginpage from './components/pages/auth/LoginPage';
 import Dashboardpage from './components/pages/dashboard/DashBoard';
 import Loginformik from './components/pure/forms/loginFormik';
+import Registerformik from './components/pure/forms/registerFormik';
 
 
 function AppRoutingFinal() {
 
   // todo change to value from sessionStorage 
   let loggedIn = true;
+  let registerIn = false;
+
 
   return (
     <Router>
+      <nav>
+      <aside>
+          <Link to='/Register' > | Register </Link>
+          <Link to='login'> || Login </Link>
+        </aside>
+
+      </nav>
+
+
       <Routes>
         {/* Redirections to protect our routes */}
         <Route 
@@ -41,8 +53,16 @@ function AppRoutingFinal() {
                 <Navigate from='/' to='/login' />
                 }
               />
-        
-
+        {/* Register Route */}
+        <Route exact
+               path = '/Register'
+               element = {
+                registerIn ?
+                <Navigate from='/' to='/login' />
+                :
+                <Registerformik/>
+                }
+              />
 
         <Route path='*' element={ <Notfoundpage/>} /> 
       </Routes>

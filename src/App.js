@@ -16,6 +16,11 @@ import Optionalrender from './components/pure/optionalRender';
 import Loginformik from './components/pure/forms/loginFormik';
 import Registerformik from './components/pure/forms/registerFormik';
 import Taskformformink from './components/pure/forms/taskFormFormink';
+import AsyncExample from './components/pure/AsyncExample';
+import Observableexample from './components/pure/forms/ObservableExample';
+
+
+
 
 
 function App() {
@@ -65,11 +70,13 @@ function App() {
       {/* <Loginformik></Loginformik> */}
       {/* <Registerformik></Registerformik> */}
       
-      
+      {/* Ejemplo de procesos Asincronos */}
+      {/* <AsyncExample/> */}
+      <Observableexample/>
 
       {/* Componente Listado de Tareas */}
-      <TaskListComponent ></TaskListComponent>
-      
+      {/* <TaskListComponent ></TaskListComponent>
+       */}
       
     </div>
   );

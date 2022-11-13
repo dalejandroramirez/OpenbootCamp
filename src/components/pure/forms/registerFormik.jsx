@@ -6,6 +6,7 @@ import * as Yup from 'yup'
 // Models
 import { ROLES } from '../../../models/roles.enum';
 import { User } from '../../../models/user.class';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -52,6 +53,8 @@ const Registerformik = () => {
     alert('Register User');
 
   }
+
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -117,7 +120,7 @@ const Registerformik = () => {
                 (<ErrorMessage name='confirm' component='div'/>)
               }
 
-              <button type='submit'>Register Account </button>
+              <button type='submit' onClick={()=> {navigate('/login')}}>Register Account </button>
               {
                 isSubmitting ? <p> Sending your Credentials...</p> : null 
               }
