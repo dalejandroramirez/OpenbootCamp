@@ -3,20 +3,23 @@ import { createSlice } from '@reduxjs/toolkit'
 let nextTodoId = 0;
 
 const todosSlice = createSlice({
-  name : 'todoState',
+  name : 'todosState',
   initialState : []
   ,
   reducers: {
-    todoAdded(state,action){
-    state.push({
-      id: nextTodoId++,
-      text: action.payload.text,
-      completed : false
-    })
+    todoAdded : (state, payload) => {
+
+    state.push(
+      {
+        id: nextTodoId++,
+        text: payload.text,
+        completed : false
+      }
+    )
   },
-   todoToggled(state,action){
+   todoToggled: (state,payload) => {
     state.map((todo)=>
-    (todo.id === action.payload.id)
+    (todo.id === payload.id)
       ?
     {
       ...todo,

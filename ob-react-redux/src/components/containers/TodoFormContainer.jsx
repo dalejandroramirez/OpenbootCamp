@@ -11,8 +11,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps =  (dispatch) => {
   return {
-    submit : (text) => 
-      dispatch(addTodo(text))
+    submit : (text) =>{ 
+      console.log('cc', addTodo(text))
+      dispatch(addTodo(text))}
     }
 }
 

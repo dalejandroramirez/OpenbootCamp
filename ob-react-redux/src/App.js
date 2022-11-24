@@ -7,6 +7,11 @@ import { increment } from './store/slicers/locationSlice';
 import TodoContainer from './components/containers/TodoContainer';
 import TodoFormContainer from './components/containers/TodoFormContainer';
 import Filteroptions from './components/pure/FilterOptions';
+import TodosContainer from './components/containers/TodoContainer';
+
+
+import TodosContainerSlice from './components/containersSlice/TodoContainerSlice';
+import TodoFormContainerSlice from './components/containersSlice/TodoFormContainerSlice';
 
 function App() {
 
@@ -21,8 +26,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <TodoContainer></TodoContainer>
-        <TodoFormContainer></TodoFormContainer>
+      {/* Usando Redux */}
+        {/* <TodoContainer></TodoContainer>
+        <TodoFormContainer></TodoFormContainer> */}
+       
+       {/* Usando Redux Toolkit sun funcionar :() */}
+    {/* <TodosContainerSlice></TodosContainerSlice>
+    <TodoFormContainerSlice></TodoFormContainerSlice>  */}
         {/* Todas las opciones de filtrado */}
         <Filteroptions></Filteroptions>
 

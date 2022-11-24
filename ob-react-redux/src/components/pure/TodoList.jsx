@@ -7,7 +7,7 @@ const TodoList = ({todos, onTodoClick}) => {
     <div>
       <h1>Your TODOs</h1>
         <ul>
-        {
+        { 
             todos.map((todo,index)=>
             (
               <Todo 
