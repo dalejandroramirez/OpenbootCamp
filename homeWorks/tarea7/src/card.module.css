@@ -1,0 +1,12 @@
+.cardContainer{
+  background-color: rgb(235, 233, 233);
+  justify-items: center;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.buttonJoker{
+  color: tomato;
+
+  border-color: black;
+}
