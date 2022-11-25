@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 // useSelector : tomas algo del store
@@ -12,6 +12,7 @@ import TodosContainer from './components/containers/TodoContainer';
 
 import TodosContainerSlice from './components/containersSlice/TodoContainerSlice';
 import TodoFormContainerSlice from './components/containersSlice/TodoFormContainerSlice';
+
 
 function App() {
 
@@ -33,8 +34,12 @@ function App() {
        {/* Usando Redux Toolkit sun funcionar :() */}
     {/* <TodosContainerSlice></TodosContainerSlice>
     <TodoFormContainerSlice></TodoFormContainerSlice>  */}
+
+    
         {/* Todas las opciones de filtrado */}
-        <Filteroptions></Filteroptions>
+        {/* <Filteroptions></Filteroptions> */}
+
+  
 
         {/* <button onClick={()=> dispatch(increment())}> 
           Count is  {counter}

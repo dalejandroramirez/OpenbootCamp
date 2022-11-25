@@ -1,4 +1,5 @@
 import './App.css';
+import LoginFormCountainer from './components/containers/LoginFormCountainer';
 
 
 function AppReduxSaga() {
@@ -8,7 +9,7 @@ function AppReduxSaga() {
   
   return (
     <div className="App">
-
+    <LoginFormCountainer></LoginFormCountainer>
     </div>
   );
 }
