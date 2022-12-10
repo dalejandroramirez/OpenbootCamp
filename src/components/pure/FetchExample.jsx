@@ -1,9 +1,9 @@
 import React, {useEffect,useState}  from 'react';
-import { getAllUsers,getAllPagedUsers, getUserDetails } from '../services/fetchService';
+import { getAllUsers,getAllPagedUsers, getUserDetails, login } from '../services/fetchService';
 
 const Fetchexample = () => {
   const [users, setUsers] = useState([]);
-  const [selecteduser, setSelecteduser] = useState({});
+  const [selecteduser, setSelecteduser] = useState(null);
   const [totalUsers, settotalUsers] = useState(12);
   const [pages, setPages] = useState(2);
   const [usersPerPage, setUsersPerPage] = useState(6);
@@ -67,9 +67,28 @@ const obtainUserDetails = (id) => {
     })
 } 
 
+const authUser = () => {
+  login('eve.holt@reqres.in','cityslicka') 
+    .then((response)=>{
+      setSelecteduser(response.data);
+      console.log('Token:',response.token);
+      sessionStorage.setItem('token',response.token)
+
+    })
+    .catch((error)=>{
+      alert(`Error while login the user: ${error}`)
+    })
+    .finally(() => {
+      console.log('ended login user. Navigate to home');
+
+  })
+}
+
 
   return (
     <div>
+      {/* Button to simulate login */}
+      <button onClick={authUser}> Auth User</button>
       <h2> Users:</h2>
     {users.map((user,index) =>
       (
@@ -87,18 +106,22 @@ const obtainUserDetails = (id) => {
       2
     </button>
     <div>
-      <h3>
-        User Details
-      </h3>
-      {selecteduser && (
-        <div>
+      {selecteduser != null ?  
+      (
+      <div>
+        <h3>
+          User Details
+        </h3>
           <p> Name :{selecteduser.first_name} </p>
           <p> Last Name: {selecteduser.last_name}</p>
           <p> Email: {selecteduser.email}</p>
-          <img src={selecteduser.avatar} style={{height:'50px' ,width:'50px'}} alt='Avatar'/>
-        </div> )}
+          <img src={selecteduser.avatar} style={{height:'50px' ,width:'50px'}} alt='Avatar'/> 
+      </div>
+      ):
+      (<p>Plear click on a User to see its details</p>)
+      }
     </div>
-    </div>
+  </div>
   );
 }
 

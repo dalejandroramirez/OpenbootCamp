@@ -13,6 +13,10 @@ import reportWebVitals from './reportWebVitals';
 import AppRoutingOne from './AppRoutingOne';
 import AppRoutingFinal from './AppRoutingFinal';
 
+//PWA
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration"
+import { onServiceWorkerUpdate } from '@3m1/service-worker-updater'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -22,14 +26,11 @@ root.render(
   </React.StrictMode>
 );
 
-//Esta version ya no es compatible con react 18
+serviceWorkerRegistration.register({
+  onUpdate: onServiceWorkerUpdate
+})
 
-//
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root'));
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

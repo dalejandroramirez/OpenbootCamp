@@ -1,3 +1,38 @@
+# Generacion de funcionalidades PWA
+
+¿Que pasos hace falta para convertir esta app en una Progressive Web app? 
+
+1. package.json --> Instalar todas las dependencias de Workbox
+ -  "workbox-background-sync": "^6.5.4",
+    "workbox-broadcast-update": "^6.5.4",
+    "workbox-cacheable-response": "^6.5.4",
+    "workbox-core": "^6.5.4",
+    "workbox-expiration": "^6.5.4",
+    "workbox-google-analytics": "^6.5.4",
+    "workbox-navigation-preload": "^6.5.4",
+    "workbox-precaching": "^6.5.4",
+    "workbox-range-requests": "^6.5.4",
+    "workbox-routing": "^6.5.4",
+    "workbox-strategies": "^6.5.4",
+    "workbox-streams": "^6.5.4" 
+
+2. Crear los archivos relacionados con el service worker (service-worker.js + serviceWorkerRegistration.js)
+  - Estos archivos se pegaron desde un proyecto anterior
+  - npm install -g serve
+
+3. Referenciar el serviceWorker desde index.js
+
+- importar todo desde serviceWorkerRegistration
+
+agregar a index.js
+- import * as serviceWorkerRegistration from "/.serviceWorkerRegistration"
+ 
+- serviceWorkerRegistration.register();
+
+4. Instalar dependencias para manipular el dom con un mensaje de actualizacion
+npm install --legacy-peer-deps --save @3m1/service-worker-update
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

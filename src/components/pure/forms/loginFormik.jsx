@@ -4,6 +4,8 @@ import * as Yup from 'yup'
 
 import  { useNavigate } from 'react-router-dom'
 
+
+
 const loginSchema = Yup.object().shape(
   {
     email: Yup.string()
@@ -16,10 +18,6 @@ const loginSchema = Yup.object().shape(
                   .required('Password is required')
   }
 );
-
-
-
-
 
 const Loginformik = () => {
 

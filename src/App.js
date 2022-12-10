@@ -19,9 +19,12 @@ import Taskformformink from './components/pure/forms/taskFormFormink';
 import AsyncExample from './components/pure/AsyncExample';
 import Observableexample from './components/pure/forms/ObservableExample';
 import Fetchexample from './components/pure/FetchExample';
+import Axiosexample from './components/pure/AxiosExample';
+import Axioscrudexample from './components/pure/AxiosCRUDExample';
 
 
-
+// Dependecias PWA
+import Updater from './components/sw/Updater'
 
 
 function App() {
@@ -74,11 +77,15 @@ function App() {
       {/* Ejemplo de procesos Asincronos */}
       {/* <AsyncExample/> */}
       {/* <Observableexample/> */}
-      <Fetchexample/>
-
+      {/* <Fetchexample/> */}
+      {/* <Axiosexample/> */}
+      <Axioscrudexample/>
+      
       {/* Componente Listado de Tareas */}
-      {/* <TaskListComponent ></TaskListComponent>
-       */}
+      {/* <TaskListComponent ></TaskListComponent> */}
+
+      {/* Necesario para pwa */}
+      <Updater />
       
     </div>
   );
