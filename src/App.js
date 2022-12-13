@@ -25,6 +25,7 @@ import Axioscrudexample from './components/pure/AxiosCRUDExample';
 
 // Dependecias PWA
 import Updater from './components/sw/Updater'
+import NotificationManager from './components/pure/NotificationManager';
 
 
 function App() {
@@ -79,10 +80,13 @@ function App() {
       {/* <Observableexample/> */}
       {/* <Fetchexample/> */}
       {/* <Axiosexample/> */}
-      <Axioscrudexample/>
+      {/* <Axioscrudexample/> */}
       
       {/* Componente Listado de Tareas */}
       {/* <TaskListComponent ></TaskListComponent> */}
+
+      {/* Example Notification with PWA */}
+      <NotificationManager></NotificationManager>
 
       {/* Necesario para pwa */}
       <Updater />

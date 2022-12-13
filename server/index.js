@@ -39,9 +39,18 @@ app.get('/', (req, res) => {
   webpush.sendNotification(subscription, payload);
 });
 
+// Recibir el post gestionado desde NotificationMasager.jsx en app.js
+app.post('/custom_notification', (req, res) => {
+  const { title, message } = req.body;
+  console.log(req.body);
+  const payload = JSON.stringify({title, message});
+  webpush.sendNotification(subscription, payload);
+  res.send('Todo ok custom Notification Enviada')
+});
+
+
 // Generar un post en subscription y pasar por pantalla el request
 app.post('/subscription', (req,res) => {
-
 // const pushSubscription = req.body.pushSubscription; //Mismo de abajo
   const { pushSubscription } = req.body;
   console.log(pushSubscription);
