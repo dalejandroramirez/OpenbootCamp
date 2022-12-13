@@ -71,17 +71,28 @@ self.addEventListener('message', (event) => {
 
 // Any other custom service worker logic can go here.
 // Aqui voy a poner todo el codigo custom
-const version = "app-TaskList-v6";
-
 
 self.addEventListener('install', event => {
-  console.log(`Instalando version ${version}`)
+  console.log(`Instalando nueva version ...`)
 });
 
 self.addEventListener('activate', event => {
-  console.log(`Activada version ${version}`)
+  console.log(`Activada nueva version ... `)
 });
 
-//Este es un comentario para actualizar :)
+// // Activar esta tool para poder hacer pruebas de escucha desde la devtool
+// self.addEventListener('push',event =>{
+//   self.registration.showNotification("Notificacion recibida desde service Worker",{
+//     body: "Esta notificacion es enviada desde el service Worker :)"
+//   });
+// });
+
+// Escuchar el mensaje mandado desde el servidor por el push
+  self.addEventListener('push', event => {
+    const { title , message } = event.data.json();
+    self.registration.showNotification(title, { body: message })
+  });
+
+//Este es un comentario para actualizar :).
 
 

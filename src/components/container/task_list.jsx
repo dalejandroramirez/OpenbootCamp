@@ -116,7 +116,7 @@ const loadingStyle = {
           <div className='col-12'>
             <div className='card'>
               <div className='card-header p-3' >
-                <h5>Your Tasks</h5>
+                <h5>Your Tasks with PWA</h5>
               </div>
               <div className='card-body' data-mdb-perfect-scrollbar= "true" style = { {position: 'relative', height: '400px'} }>
                 {loading ? (<p style={loadingStyle }>Loading Tasks...</p>) : taskTable}
