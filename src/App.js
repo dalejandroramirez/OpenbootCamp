@@ -27,6 +27,16 @@ import Axioscrudexample from './components/pure/AxiosCRUDExample';
 import Updater from './components/sw/Updater'
 import NotificationManager from './components/pure/NotificationManager';
 
+//React avanzado componentes
+import Todo from './testcomponents/Todo';
+const todos = [
+  {id: 1, text: 'Estudiar', completed: true},
+  {id: 2, text: 'Dormir', completed: true},
+  {id: 3, text: 'Trabajar', completed: false},
+  {id: 4, text: 'cosas', completed: true},
+  {id: 5, text: 'etc', completed: false}
+
+]
 
 function App() {
   return (
@@ -58,14 +68,9 @@ function App() {
       {/* <Father></Father> */}
       {/* <TaskListComponent ></TaskListComponent> */}
       {/* </header> */}
-
-
       {/* {
-
       Formik
-
        <ContactListComponent>
-
       </ContactListComponent> } */}
 
       {/* Ejemplo Renderizado Condicional */}
@@ -86,9 +91,17 @@ function App() {
       {/* <TaskListComponent ></TaskListComponent> */}
 
       {/* Example Notification with PWA */}
-      <NotificationManager></NotificationManager>
+      {/* <NotificationManager></NotificationManager> */}
 
       {/* Necesario para pwa */}
+
+      {/* React avanzado */}
+      <h1> Bienvienido </h1>
+      {todos.map((todo, key) => (<Todo todo={todo}  />))}
+
+      <Todo todo = {{id: 1, text: 'Estudiar', completed: true}}>
+      </Todo>
+
       <Updater />
       
     </div>
